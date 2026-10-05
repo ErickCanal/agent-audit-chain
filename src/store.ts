@@ -1,7 +1,5 @@
-import { computeHash } from './canonical';
-import type { AuditEvent } from './types';
-
-const GENESIS = '0'.repeat(64);
+import { GENESIS, computeHash } from './canonical.js';
+import type { AuditEvent } from './types.js';
 
 export interface AuditStore {
   append(e: Omit<AuditEvent, 'prevHash' | 'hash'>): AuditEvent;
@@ -14,7 +12,7 @@ export class MemoryAuditStore implements AuditStore {
 
   append(e: Omit<AuditEvent, 'prevHash' | 'hash'>): AuditEvent {
     const chain = this.chains.get(e.tenantId) ?? [];
-    const prevHash = chain.length ? chain[chain.length - 1].hash : GENESIS;
+    const prevHash = chain.at(-1)?.hash ?? GENESIS;
     const unsealed = { ...e, prevHash };
     const event = { ...unsealed, hash: computeHash(unsealed) } as AuditEvent;
     chain.push(event);

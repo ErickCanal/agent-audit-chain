@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { canonicalize, computeHash } from './canonical';
+import { canonicalize, computeHash } from './canonical.js';
 
 describe('canonicalize', () => {
   it('is key-order independent', () => {

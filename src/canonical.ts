@@ -1,5 +1,7 @@
 import { createHash } from 'node:crypto';
 
+export const GENESIS = '0'.repeat(64);
+
 // Deterministic serialization: sorted keys, recursive, hash field excluded
 export function canonicalize(obj: unknown): string {
   if (obj === null || typeof obj !== 'object') return JSON.stringify(obj);

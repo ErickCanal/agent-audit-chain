@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { MemoryAuditStore } from './store';
+import { MemoryAuditStore } from './store.js';
 
 const evt = (tenantId: string, verb: string) => ({
   id: crypto.randomUUID(), tenantId,
