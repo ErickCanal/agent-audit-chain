@@ -1,5 +1,5 @@
 {
-  "name": "openclaw-governance",
+  "name": "agent-audit-chain",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Tamper-evident, per-tenant hash-chained audit log for AI agent actions",
   "devDependencies": {
     "@types/node": "^26.2.0",
     "@types/sql.js": "^1.4.11",

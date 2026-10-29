@@ -7,14 +7,14 @@ import { SqliteAuditStore } from './sqliteStore.js';
 const evt = (tenantId: string, verb: string) => ({
   id: crypto.randomUUID(), tenantId,
   actor: { type: 'agent' as const, id: 'a1' },
-  action: { verb, resource: 'urn:openclaw:tool:test', outcome: 'allowed' as const },
+  action: { verb, resource: 'urn:example:tool:test', outcome: 'allowed' as const },
   payload: { digest: 'd', redactionLevel: 'none' as const },
   timestamp: new Date().toISOString(),
 });
 
 let dir: string;
 const dbPath = () => {
-  dir = mkdtempSync(join(tmpdir(), 'openclaw-audit-'));
+  dir = mkdtempSync(join(tmpdir(), 'agent-audit-'));
   return join(dir, 'audit.sqlite');
 };
 
