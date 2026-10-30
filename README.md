@@ -81,7 +81,6 @@ Requires Node.js 20+.
 ```bash
 npm install
 npm test            # 12 tests (vitest)
-npx tsc --noEmit    # type-check
 ```
 
 The tests cover key-order-independent hashing, chain linking, tenant isolation, persistence across reopening the database file, and detecting a record that was edited directly on disk.
